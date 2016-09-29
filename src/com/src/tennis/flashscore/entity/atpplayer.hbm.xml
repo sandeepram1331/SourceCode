@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.src.tennis.flashscore.entity.ATPPlayer" table="ATPPlayerDetails">
+		<id name="name" type="string">
+			<column name="Name" />
+		</id>
+		<property name="rank" type="java.lang.Integer">
+			<column name="Rank" />
+		</property>
+		<property name="nationality" type="string">
+			<column name="Nationality" />
+		</property>
+		<property name="RankColumnPoints" type="java.lang.Integer">
+			<column name="RankColumnPoints" />
+		</property>
+		<property name="rankColumnTournaments" type="java.lang.Integer">
+			<column name="rankColumnTournaments" />
+		</property>
+		<property name="playerURL" type="string">
+			<column name="playerURL" />
+		</property>
+		<property name="playerEndURL" type="string">
+			<column name="playerEndURL" />
+		</property>
+		<property name="playerId" type="string">
+			<column name="playerid" />
+		</property>
+		<property name="gender" type="string">
+			<column name="gender" />
+		</property>
+	</class>
+</hibernate-mapping>	

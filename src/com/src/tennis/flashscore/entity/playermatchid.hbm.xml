@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.src.tennis.flashscore.entity.PlayerMatchIDMap" table="PLAYER_MATCHID">
+		
+		<id name="matchId" type="string">
+			<column name="MATCHID" />
+		</id>
+		<property name="playername" type="string">
+			<column name="PLAYERNAME" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.src.tennis.flashscore.entity.MatchEntry"
+		table="matchentry">
+
+		<id name="matchid" type="string">
+			<column name="matchid" />
+		</id>
+		<property name="setid" type="string">
+			<column name="setid" />
+		</property>
+		<property name="gamenumber" type="java.lang.Integer">
+			<column name="gamenumber" />
+		</property>
+		<property name="servernumber" type="java.lang.Integer">
+			<column name="servernumber" />
+		</property>
+		<property name="point1" type="string">
+			<column name="point1" />
+		</property>
+		<property name="point2" type="string">
+			<column name="point2" />
+		</property>
+		<property name="point3" type="string">
+			<column name="point3" />
+		</property>
+		<property name="point4" type="string">
+			<column name="point4" />
+		</property>
+		<property name="point5" type="string">
+			<column name="point5" />
+		</property>
+		<property name="point6" type="string">
+			<column name="point6" />
+		</property>
+		<property name="point7" type="string">
+			<column name="point7" />
+		</property>
+		<property name="breakserve" type="java.lang.Integer">
+			<column name="breakserve" />
+		</property>
+		<property name="player1" type="string">
+			<column name="player1" />
+		</property>
+		<property name="player2" type="string">
+			<column name="player2" />
+		</property>
+		<property name="rank1" type="java.lang.Integer">
+			<column name="rank1" />
+		</property>
+		<property name="rank2" type="java.lang.Integer">
+			<column name="rank2" />
+		</property>
+	</class>
+</hibernate-mapping>
