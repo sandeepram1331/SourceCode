@@ -9,16 +9,13 @@ import java.util.ArrayList;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
-import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import com.mkyong.persistence.HibernateUtil;
-import com.src.tennis.flashscore.entity.ATPPlayer;
+import com.src.hibernateutil.HibernateUtil;
 import com.src.tennis.flashscore.entity.PLAYER_MATCHID_LAST_FEW;
 import com.src.tennis.flashscore.entity.PlayerMatchIDMap;
 import com.thoughtworks.selenium.Selenium;

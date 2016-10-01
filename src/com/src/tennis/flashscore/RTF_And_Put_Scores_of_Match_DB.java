@@ -12,8 +12,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import com.mkyong.persistence.HibernateUtil;
-import com.src.tennis.flashscore.entity.MatchEntry;
+import com.src.entities.Matchentry;
+import com.src.hibernateutil.HibernateUtil;
 import com.src.tennis.flashscore.entity.PlayerMatchIDMap;
 
 public class RTF_And_Put_Scores_of_Match_DB {
@@ -111,7 +111,7 @@ public class RTF_And_Put_Scores_of_Match_DB {
 		}
 		for(int z=0;z<oddscores.size();z++)
 		{
-			MatchEntry me = new MatchEntry();
+			Matchentry me = new Matchentry();
 			me.setPlayer1(player1);
 			me.setPlayer2(player2);
 			me.setMatchid(p.getMatchId());
@@ -128,14 +128,14 @@ public class RTF_And_Put_Scores_of_Match_DB {
 			}
 			if(i==2)
 			{
-				me.setServernumber(2);
+				me.setServeNumber(2);
 			}
 			else
 			{
-				me.setServernumber(1);
+				me.setServeNumber(1);
 			}
 			//we need to parse the score and put into DB
-			me.setPoint1(oddscores.get(z).text());
+			me.setScore(oddscores.get(z).text());
 			me.setSetid(set);
 			me.setGamenumber(z*2+1);
 			Session session1 = HibernateUtil.getSessionFactory().openSession();
@@ -148,7 +148,7 @@ public class RTF_And_Put_Scores_of_Match_DB {
 		for(int z=0;z<evenheads.size();z++)
 		{
 
-			MatchEntry me = new MatchEntry();
+			Matchentry me = new Matchentry();
 			me.setPlayer1(player1);
 			me.setPlayer2(player2);
 			me.setMatchid(p.getMatchId());
@@ -165,14 +165,14 @@ public class RTF_And_Put_Scores_of_Match_DB {
 			}
 			if(i==2)
 			{
-				me.setServernumber(1);
+				me.setServeNumber(1);
 			}
 			else
 			{
-				me.setServernumber(2);
+				me.setServeNumber(2);
 			}
 			//we need to parse the score and put into DB
-			me.setPoint1(evenscores.get(z).text());
+			me.setScore(evenscores.get(z).text());
 			me.setSetid(set);
 			me.setGamenumber(z*2+2);
 			Session session1 = HibernateUtil.getSessionFactory().openSession();

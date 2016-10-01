@@ -13,10 +13,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import com.mkyong.persistence.HibernateUtil;
+import com.src.hibernateutil.HibernateUtil;
 import com.src.tennis.flashscore.entity.WTAPlayer;
-import com.src.tennis.flashscore.entity.PLAYER_MATCHID_LAST_FEW;
-import com.src.tennis.flashscore.entity.WTAPlayerMatchIDMap;
 import com.src.tennis.flashscore.entity.WTA_PLAYER_MATCHID_LAST_FEW;
 
 public class WTAMatchesFromSavedPlayerProfile {

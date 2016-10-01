@@ -15,7 +15,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import com.src.entities.Failedmatchids;
 import com.src.entities.MatchEntry_Old;
 import com.src.entities.MatchSummary;
 import com.src.entities.Matchentry;
@@ -123,7 +122,7 @@ public class WTAScoresPlacer implements Runnable{
 				if(prh.countOfSets == null)
 				{
 					Session s = HibernateUtil.getSessionFactory().openSession();
-					Criteria c = s.createCriteria(Failedmatchids.class);
+					/*Criteria c = s.createCriteria(Failedmatchids.class);
 					c.add(Restrictions.eq("matchid", p.getMatchId()));
 					if(c.list().isEmpty())
 					{
@@ -131,7 +130,7 @@ public class WTAScoresPlacer implements Runnable{
 						fms.setMatchid(p.getMatchId());
 						Session s1 = HibernateUtil.getSessionFactory().openSession();
 						s1.save(fms);
-					}					
+					}*/					
 				}
 				switch(prh.countOfSets)
 				{
@@ -183,7 +182,7 @@ public class WTAScoresPlacer implements Runnable{
 				}
 				System.out.println("file exists - two");
 				Session s = HibernateUtil.getSessionFactory().openSession();
-				Criteria c = s.createCriteria(Failedmatchids.class);
+				/*Criteria c = s.createCriteria(Failedmatchids.class);
 				c.add(Restrictions.eq("matchid", p.getMatchId()));
 				if(c.list().isEmpty())
 				{
@@ -191,7 +190,7 @@ public class WTAScoresPlacer implements Runnable{
 					fms.setMatchid(p.getMatchId());
 					Session s1 = HibernateUtil.getSessionFactory().openSession();
 					s1.save(fms);
-				}
+				}*/
 				continue;
 			}
 			catch(Exception e)
@@ -972,15 +971,15 @@ public class WTAScoresPlacer implements Runnable{
 						file.delete();
 						System.out.println("Enering session");
 						Session s = HibernateUtil.getSessionFactory().openSession();
-						Failedmatchids fm = (Failedmatchids) s.get(Failedmatchids.class, p.getMatchId());
-						System.out.println(fm + " - FM");
-						if(fm==null)
+						//Failedmatchids fm = (Failedmatchids) s.get(Failedmatchids.class, p.getMatchId());
+						//System.out.println(fm + " - FM");
+						/*if(fm==null)
 						{
 							Failedmatchids fms = new Failedmatchids();
 							fms.setMatchid(p.getMatchId());
 							Session s1 = HibernateUtil.getSessionFactory().openSession();
 							s1.save(fms);
-						}
+						}*/
 
 
 						//continue;

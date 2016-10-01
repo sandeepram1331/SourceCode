@@ -11,9 +11,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import com.mkyong.persistence.HibernateUtil;
-import com.src.tennis.flashscore.entity.ATPPlayer;
-import com.src.tennis.flashscore.entity.WTAPlayer;
+import com.src.entities.ATPPlayer;
+import com.src.hibernateutil.HibernateUtil;
 
 public class WTArankingsFromSavedPageofPlayers {
 

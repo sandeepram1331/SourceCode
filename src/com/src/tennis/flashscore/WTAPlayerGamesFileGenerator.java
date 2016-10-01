@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -14,8 +13,7 @@ import org.hibernate.criterion.Restrictions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import com.mkyong.persistence.HibernateUtil;
-import com.src.tennis.flashscore.entity.WTAPlayer;
+import com.src.hibernateutil.HibernateUtil;
 import com.src.tennis.flashscore.entity.WTAPlayer;
 import com.thoughtworks.selenium.Selenium;
 import com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium;

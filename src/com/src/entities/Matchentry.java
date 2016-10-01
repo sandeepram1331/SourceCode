@@ -2,28 +2,131 @@ package com.src.entities;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "matchentry")
 public class Matchentry implements java.io.Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
+	@Id 
+	@Column(name="matchid")
 	private String matchid;
+	@Id
+	@Column(name="setid")
 	private String setid;
+	@Column(name="gamenumber")
 	private int gamenumber;
+	@Column(name="score")
 	private String score;
+	@Column(name="breakserve")
 	private Integer breakserve;
+	@Column(name="actualgamenumber")
 	private Integer actualgamenumber;
+	@Column(name="serveNumber")
 	private Integer serveNumber;
+	@Column(name="rank1")
 	private int rank1;
+	@Column(name="rank2")
 	private int rank2;
+	@Column(name="gender")
 	private String gender;
+	@Column(name="servername")
+	private String servername;
+	@Column(name="player1")
+	private String player1;
+	public String getServername() {
+		return servername;
+	}
+
+	public void setServername(String servername) {
+		this.servername = servername;
+	}
+
+	public String getPlayer1() {
+		return player1;
+	}
+
+	public void setPlayer1(String player1) {
+		this.player1 = player1;
+	}
+
+	public String getPlayer2() {
+		return player2;
+	}
+
+	public void setPlayer2(String player2) {
+		this.player2 = player2;
+	}
+
+	public String getTournamentname() {
+		return tournamentname;
+	}
+
+	public void setTournamentname(String tournamentname) {
+		this.tournamentname = tournamentname;
+	}
+
+	public String getTournamentcountry() {
+		return tournamentcountry;
+	}
+
+	public void setTournamentcountry(String tournamentcountry) {
+		this.tournamentcountry = tournamentcountry;
+	}
+
+	public String getCourttype() {
+		return courttype;
+	}
+
+	public void setCourttype(String courttype) {
+		this.courttype = courttype;
+	}
+
+	public String getDraw() {
+		return draw;
+	}
+
+	public void setDraw(String draw) {
+		this.draw = draw;
+	}
+
+	public String getGamewonby() {
+		return gamewonby;
+	}
+
+	public void setGamewonby(String gamewonby) {
+		this.gamewonby = gamewonby;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	@Column(name="player2")
+	private String player2;
+	@Column(name="tournamentname")
+	private String tournamentname;
+	@Column(name="tournamentcountry")
+	private String tournamentcountry;
+	@Column(name="courttype")
+	private String courttype;
+	@Column(name="draw")
+	private String draw;
+	@Column(name="gamewonby")
+	private String gamewonby;
 
 
 
-	
 	private int totalpointswon_1;
-	
+
 	public int getTotalpointswon_1() {
 		return totalpointswon_1;
 	}
@@ -180,5 +283,6 @@ public class Matchentry implements java.io.Serializable {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+
 
 }

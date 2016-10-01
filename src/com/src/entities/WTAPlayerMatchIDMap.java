@@ -1,10 +1,16 @@
 package com.src.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+
 public class WTAPlayerMatchIDMap {
 
 
-	private String playername;
+	@Id
+	@Column(name="matchId")
 	private String matchId;
+	@Column(name="playername")
+	private String playername;
 	public String getPlayername() {
 		return playername;
 	}

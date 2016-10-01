@@ -3,6 +3,7 @@ package com.src.tennis.flashscore;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -11,14 +12,17 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import com.mkyong.persistence.HibernateUtil;
-import com.src.tennis.flashscore.entity.ATPPlayer;
+import com.src.entities.ATPPlayer;
+import com.src.hibernateutil.AnnotationUtil;
+import com.src.hibernateutil.HibernateUtil;
 
 public class RTF_Rank_Player_Details {
 
 	public static void main(String args[]) throws IOException
 	{
-		File input = new File("D:\\ATPRankings.html");
+		Session session1 = AnnotationUtil.giveSession();
+		Session session = AnnotationUtil.giveSession();
+		File input = new File("E:\\d_drive\\ATPRankings.html");
 		Document doc = Jsoup.parse(input, "UTF-8", "http://example.com/");
 		Element table = doc.getElementById("ranking-table-results_35851");
 		Elements rowodd = table.select("tr[class=rank-row odd]");
@@ -58,11 +62,14 @@ public class RTF_Rank_Player_Details {
 			System.out.println(playerId+" - playerId");
 			atp.setGender("male");
 			atp.setPlayerId(playerId);
-			Session session = HibernateUtil.getSessionFactory().openSession();
+			atp.setDateAdded(new Date());
+			
 			session.beginTransaction();
 			session.save(atp);
 			session.getTransaction().commit();
-			atpLi.add(atp);
+			session.clear();
+		//	atpLi.add(atp);
+			//session.close();
 			ATPPlayer atp2 = new ATPPlayer();
 			if(k<=j-1)
 			{
@@ -90,11 +97,12 @@ public class RTF_Rank_Player_Details {
 				String playerId2 = url1.substring(url1.length()-8, url1.length());
 				atp2.setPlayerId(playerId2);
 				System.out.println(url1+" - "+playerId2);
-					
-				Session session1 = HibernateUtil.getSessionFactory().openSession();
+					atp2.setDateAdded(new Date());
+				
 				session1.beginTransaction();
 				session1.save(atp2);
 				session1.getTransaction().commit();
+				session1.clear();
 				
 				
 			}			

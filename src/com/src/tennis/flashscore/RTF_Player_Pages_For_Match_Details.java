@@ -1,8 +1,6 @@
 package com.src.tennis.flashscore;
 
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -15,10 +13,9 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import com.mkyong.persistence.HibernateUtil;
-import com.src.tennis.flashscore.entity.ATPPlayer;
+import com.src.entities.ATPPlayer;
+import com.src.hibernateutil.HibernateUtil;
 import com.src.tennis.flashscore.entity.PLAYER_MATCHID_LAST_FEW;
-import com.src.tennis.flashscore.entity.PlayerMatchIDMap;
 
 public class RTF_Player_Pages_For_Match_Details {
 

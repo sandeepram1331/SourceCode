@@ -14,8 +14,8 @@ import org.hibernate.criterion.Restrictions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import com.src.entities.ATPPlayer;
 import com.src.hibernateutil.HibernateUtil;
-import com.src.tennis.flashscore.entity.ATPPlayer;
 import com.thoughtworks.selenium.Selenium;
 import com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium;
 

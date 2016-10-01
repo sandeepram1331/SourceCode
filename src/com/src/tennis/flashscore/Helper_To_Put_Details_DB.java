@@ -2,22 +2,17 @@ package com.src.tennis.flashscore;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.hibernate.Session;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
-import com.mkyong.persistence.HibernateUtil;
+import com.src.hibernateutil.HibernateUtil;
 import com.src.tennis.flashscore.entity.MatchDetailsTomorrow;
 
 public class Helper_To_Put_Details_DB {
