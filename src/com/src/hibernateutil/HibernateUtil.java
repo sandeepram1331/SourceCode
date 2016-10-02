@@ -2,6 +2,7 @@ package com.src.hibernateutil;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
+import org.hibernate.cfg.Configuration;
 
 public class HibernateUtil {
 	
@@ -18,8 +19,7 @@ public class HibernateUtil {
     private static SessionFactory buildSessionFactory() {
         try {
             // Create the SessionFactory from hibernate.cfg.xml
-        	SessionFactory factory=new AnnotationConfiguration()  
-        	         .configure().buildSessionFactory();
+        	SessionFactory factory=new Configuration().configure().buildSessionFactory();
         	return factory;	
     		}
         catch (Throwable ex) {

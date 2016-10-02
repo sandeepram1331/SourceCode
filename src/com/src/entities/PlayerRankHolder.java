@@ -19,6 +19,10 @@ public class PlayerRankHolder {
 	public int setscors[] = null;
 	public String matchdate;
 	public Date gamedate;
+	public String tournamentname;
+	public String tournamentcountry;
+	public String courttype;
+	public String draw;
 	@Override
 	public String toString() {
 		return "PlayerRankHolder [player1=" + player1 + ", player2=" + player2 + ", rank1=" + rank1 + ", rank2=" + rank2

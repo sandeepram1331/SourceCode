@@ -15,5 +15,10 @@
 		<mapping class="com.src.entities.MatchSummary"/>
 		<mapping class="com.src.entities.ATPPlayer"/>
 		<mapping class="com.src.entities.WTAPlayerMatchIDMap"/>
+		<mapping class="com.src.entities.WTAPlayer"/>
+		<mapping class="com.src.entities.ATPPlayerMatchids"/>
+		<mapping class="com.src.entities.WTAPlayerMatchids"/>
+		
+		
 	</session-factory>
 </hibernate-configuration>
