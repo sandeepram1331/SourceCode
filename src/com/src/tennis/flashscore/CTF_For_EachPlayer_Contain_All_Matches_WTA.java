@@ -27,7 +27,8 @@ public class CTF_For_EachPlayer_Contain_All_Matches_WTA
 	
 	public static void main(String args[]) throws IOException
 	{
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\SandeepReddy\\Downloads\\code\\CHROMEDRIVER\\chromedriver_win32\\chromedriver.exe");
+	//	System.setProperty("webdriver.chrome.driver", "C:\\Users\\SandeepReddy\\Downloads\\code\\CHROMEDRIVER\\chromedriver_win32\\chromedriver.exe");
+		 System.setProperty("webdriver.chrome.driver", "C:\\CHROMEDRIVER\\chromedriver_win32\\chromedriver.exe");
 		/*
 		 * 1: Connect to player database
 		 * 2: Fetch URL's
@@ -38,8 +39,10 @@ public class CTF_For_EachPlayer_Contain_All_Matches_WTA
 		ArrayList<WTAPlayer> players = new ArrayList<WTAPlayer>();
 		players = fetchUrls();
 		Selenium selenium;
-		//driver = new FirefoxDriver();
 		WebDriver driver = new ChromeDriver();
+		//driver = new FirefoxDriver();
+
+
 		boolean fileexist=false;
 		for(WTAPlayer player: players)
 		{
@@ -60,6 +63,9 @@ public class CTF_For_EachPlayer_Contain_All_Matches_WTA
 			{
 				try
 				{
+					
+					
+
 					String baseUrl=player.getPlayerURL();
 					System.out.println(baseUrl);
 					selenium = new WebDriverBackedSelenium(driver, "http://www.flashscore.com/");

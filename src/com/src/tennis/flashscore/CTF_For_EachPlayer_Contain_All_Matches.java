@@ -12,9 +12,11 @@ import org.hibernate.Session;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.src.entities.ATPPlayer;
+import com.src.entities.WTAPlayer;
 import com.src.hibernateutil.HibernateUtil;
 import com.thoughtworks.selenium.Selenium;
 import com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium;
@@ -22,13 +24,12 @@ import com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium;
 public class CTF_For_EachPlayer_Contain_All_Matches
 {
 
-	static WebDriver driver = null;
+	//static WebDriver driver = null;
 	
 	public static void main(String args[]) throws IOException
 	{
-		
-		  System.setProperty("webdriver.chrome.driver", "\\CHROMEDRIVER\\chromedriver_win32");
-
+	//	System.setProperty("webdriver.chrome.driver", "C:\\Users\\SandeepReddy\\Downloads\\code\\CHROMEDRIVER\\chromedriver_win32\\chromedriver.exe");
+		 System.setProperty("webdriver.chrome.driver", "C:\\CHROMEDRIVER\\chromedriver_win32\\chromedriver.exe");
 		/*
 		 * 1: Connect to player database
 		 * 2: Fetch URL's
@@ -39,7 +40,10 @@ public class CTF_For_EachPlayer_Contain_All_Matches
 		ArrayList<ATPPlayer> players = new ArrayList<ATPPlayer>();
 		players = fetchUrls();
 		Selenium selenium;
-		driver = new FirefoxDriver();
+		WebDriver driver = new ChromeDriver();
+		//driver = new FirefoxDriver();
+
+
 		boolean fileexist=false;
 		for(ATPPlayer player: players)
 		{
@@ -60,6 +64,9 @@ public class CTF_For_EachPlayer_Contain_All_Matches
 			{
 				try
 				{
+					
+					
+
 					String baseUrl=player.getPlayerURL();
 					System.out.println(baseUrl);
 					selenium = new WebDriverBackedSelenium(driver, "http://www.flashscore.com/");
